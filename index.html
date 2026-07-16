@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Matúš Jarkovský | Gitarista a hudobný autor</title>
-  <meta name="description" content="Osobný web slovenského gitaristu a hudobného autora Matúša Jarkovského. DoubleBreak, Kuker, Meky Žbirka Revival a Elán Tribute.">
+  <meta name="description" content="Osobný web slovenského gitaristu a hudobného autora Matúša Jarkovského.">
   <meta name="theme-color" content="#080808">
   <meta property="og:title" content="Matúš Jarkovský | Gitarista a hudobný autor">
   <meta property="og:description" content="DoubleBreak, Kuker, Meky Žbirka Revival a Elán Tribute.">
@@ -12,45 +12,39 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Matúš Jarkovský – domov">MJ</a>
+    <a class="brand" href="#top">MATÚŠ JARKOVSKÝ</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav id="main-nav" class="main-nav" aria-label="Hlavná navigácia">
       <a href="#about">O mne</a>
       <a href="#projects">Projekty</a>
       <a href="#media">Médiá</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#audio">Audio</a>
+      <a class="accent-link" href="#contact">Kontakt</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-photo" aria-hidden="true">
-        <img src="assets/images/hero.jpg" alt="">
+      <img class="hero-image" src="assets/images/hero.jpg" alt="Matúš Jarkovský hrá na gitare">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal visible">
+        <h1 id="hero-title">MATÚŠ<br>JARKOVSKÝ</h1>
+        <span class="gold-line"></span>
+        <p>Gitarista a hudobný autor</p>
       </div>
-      <div class="hero-shade"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Gitarista · hudobný autor</p>
-        <h1 id="hero-title">Matúš<br>Jarkovský</h1>
-        <p class="hero-subtitle">Gitarista a hudobný autor.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Pozrieť projekty</a>
-          <a class="button button-ghost" href="#contact">Kontakt</a>
-        </div>
-      </div>
-      <a class="scroll-cue" href="#about" aria-label="Prejsť nižšie"><span></span></a>
+      <a class="scroll-cue" href="#about" aria-label="Posunúť sa nižšie">
+        <span>Scroll</span><i></i>
+      </a>
     </section>
 
-    <section class="section about" id="about">
-      <div class="section-heading reveal">
-        <p class="eyebrow">O mne</p>
-        <h2>Hudba ako priestor<br>pre vlastný výraz.</h2>
-      </div>
-      <div class="about-copy reveal">
+    <section class="section intro" id="about">
+      <div class="section-kicker reveal">O mne</div>
+      <div class="intro-copy reveal">
         <p>Som slovenský gitarista a hudobný autor pochádzajúci z Popradu, pričom dlhodobo pôsobím najmä na prešovskej hudobnej scéne. V hudobnom prostredí ma mnohí poznajú aj pod prezývkou <strong>Kuker</strong>.</p>
         <p>Svoju sólovú tvorbu som odštartoval v roku 2020 debutovou inštrumentálnou skladbou <em>Endless Search</em>, ktorá reflektuje tému neustáleho ľudského hľadania a osobného smerovania.</p>
         <p>Hudobné vzdelanie som získal na <strong>Konzervatóriu Dezidera Kardoša</strong>. Vo svojej tvorbe sa venujem najmä gitarovej hudbe, fusion a autorskej inštrumentálnej tvorbe.</p>
@@ -58,124 +52,67 @@
     </section>
 
     <section class="section projects" id="projects">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Projekty</p>
-        <h2>Autorská tvorba<br>aj koncertné pódiá.</h2>
-      </div>
-
-      <article class="project project-featured reveal">
-        <div class="project-image" style="--project-image:url('https://www.doublebreak.sk/wp-content/uploads/2025/01/foto_kapela-1024x994.jpg')"></div>
-        <div class="project-content">
-          <span class="project-number">01</span>
-          <h3>DoubleBreak</h3>
-          <p>DoubleBreak vznikol z dlhoročného priateľstva Matúša Jarkovského a Ľuboša Dvorščáka, ktorí sa spoznali počas štúdia na Konzervatóriu Dezidera Kardoša v Prešove. Myšlienka na spoločný autorský projekt vznikla už v tom období, no naplno sa začala formovať až v januári 2023.</p>
-          <p>Výsledkom je debutový album <em>First Step</em>, v ktorom sa prepájajú jazzové a rockové prvky s prirodzeným priestorom pre improvizáciu a osobitý rukopis oboch autorov.</p>
-          <blockquote>„Keď ma Ľubo oslovil na spoluprácu, bolo mi jasné, že sa budeme pohybovať niekde v priestore jazzu a fusion, čo je mi veľmi blízke. Skladby vznikali spontánne, no každá z nich si našla vlastný charakter.“</blockquote>
-          <div class="credits">
-            <p><strong>Matúš Jarkovský</strong> — gitara, spoluautor hudby</p>
-            <p><strong>Ľuboš Dvorščák</strong> — bicie, spoluautor hudby</p>
-            <p>Hostia na nahrávke: <strong>Braňo Valanský</strong> — basgitara, <strong>Ján Lazorík</strong> — saxofón</p>
-          </div>
-          <a class="text-link" href="https://www.doublebreak.sk/" target="_blank" rel="noopener">doublebreak.sk ↗</a>
-        </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="project-image project-image-kuker"></div>
-        <div class="project-content">
-          <span class="project-number">02</span>
-          <h3>Kuker</h3>
-          <p><strong>Kuker je môj autorský sólový projekt zameraný na rockovejší gitarový svet.</strong> Vychádza z výrazných gitarových motívov, melodiky a atmosféry, pričom mi dáva priestor tvoriť hudbu osobnejšie a bez žánrových obmedzení.</p>
-          <p>Projekt som odštartoval v roku 2020 debutovou inštrumentálnou skladbou <em>Endless Search</em>, ktorá reflektuje tému neustáleho ľudského hľadania a osobného smerovania.</p>
-          <p>Na rozdiel od DoubleBreaku, ktorý sa pohybuje viac v priestore jazzu a fusion, je Kuker postavený najmä na rockovom gitarovom výraze.</p>
-          <a class="text-link" href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Počúvať na Spotify ↗</a>
-        </div>
-      </article>
-
+      <div class="section-kicker reveal">Projekty</div>
+      <h2 class="section-title reveal">MOJE PROJEKTY</h2>
       <div class="project-grid">
         <article class="project-card reveal">
-          <div class="project-card-image" style="--project-image:url('https://www.meky.sk/wp-content/uploads/2025/07/MEKY_Bardejovske-1440.jpg')"></div>
-          <span class="project-number">03</span>
-          <h3>Meky Žbirka Revival</h3>
-          <p>V projekte Meky Žbirka Revival pôsobím ako gitarista.</p>
-          <a class="text-link" href="https://www.meky.sk/" target="_blank" rel="noopener">meky.sk ↗</a>
+          <div class="project-image" style="--image:url('https://www.doublebreak.sk/wp-content/uploads/2025/01/foto_kapela-1024x994.jpg')"></div>
+          <div class="project-body"><h3>DoubleBreak</h3><p>Fusion / jazz rock</p><a href="https://www.doublebreak.sk/" target="_blank" rel="noopener">Zobraziť</a></div>
         </article>
         <article class="project-card reveal">
-          <div class="project-card-image" style="--project-image:url('https://www.elantribute.sk/wp-content/uploads/2023/12/20230825075.webp')"></div>
-          <span class="project-number">04</span>
-          <h3>Elán Tribute</h3>
-          <p>V projekte Elán Tribute pôsobím ako gitarista.</p>
-          <a class="text-link" href="https://www.elantribute.sk/" target="_blank" rel="noopener">elantribute.sk ↗</a>
+          <div class="project-image project-kuker"></div>
+          <div class="project-body"><h3>Kuker</h3><p>Autorský rock</p><a href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Zobraziť</a></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-image" style="--image:url('https://www.meky.sk/wp-content/uploads/2025/07/MEKY_Bardejovske-1440.jpg')"></div>
+          <div class="project-body"><h3>Meky Žbirka Revival</h3><p>Gitarista</p><a href="https://www.meky.sk/" target="_blank" rel="noopener">Zobraziť</a></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-image" style="--image:url('https://www.elantribute.sk/wp-content/uploads/2023/12/20230825075.webp')"></div>
+          <div class="project-body"><h3>Elán Tribute</h3><p>Gitarista</p><a href="https://www.elantribute.sk/" target="_blank" rel="noopener">Zobraziť</a></div>
         </article>
       </div>
     </section>
 
     <section class="section media" id="media">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Médiá</p>
-        <h2>Video a audio.</h2>
-      </div>
-
-      <div class="media-tabs reveal" role="tablist" aria-label="Typ médií">
-        <button class="media-tab active" role="tab" aria-selected="true" data-tab="video">YouTube</button>
-        <button class="media-tab" role="tab" aria-selected="false" data-tab="audio">Audio</button>
-      </div>
-
-      <div class="tab-panel active" id="video-panel" data-panel="video">
-        <div class="video-grid">
-          <button class="video-card reveal" data-video="1T6KAG1LOIo" aria-label="Prehrať video 1"><img src="https://i.ytimg.com/vi/1T6KAG1LOIo/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="MS1TT4BamVg" aria-label="Prehrať video 2"><img src="https://i.ytimg.com/vi/MS1TT4BamVg/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="12G6Gq9sc3U" aria-label="Prehrať video 3"><img src="https://i.ytimg.com/vi/12G6Gq9sc3U/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="bP6pHwFaRtQ" aria-label="Prehrať video 4"><img src="https://i.ytimg.com/vi/bP6pHwFaRtQ/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="Cb1zjsl5aho" aria-label="Prehrať video 5"><img src="https://i.ytimg.com/vi/Cb1zjsl5aho/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="pVKDB5RMDEE" aria-label="Prehrať video 6"><img src="https://i.ytimg.com/vi/pVKDB5RMDEE/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="QC-ihFMroi8" aria-label="Prehrať video 7"><img src="https://i.ytimg.com/vi/QC-ihFMroi8/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="O4vHG6pGDY4" aria-label="Prehrať video 8"><img src="https://i.ytimg.com/vi/O4vHG6pGDY4/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-          <button class="video-card reveal" data-video="BG2ZRHWxPU0" aria-label="Prehrať video 9"><img src="https://i.ytimg.com/vi/BG2ZRHWxPU0/hqdefault.jpg" alt="Náhľad videa"><span>▶</span></button>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="audio-panel" data-panel="audio">
-        <div class="spotify-block reveal">
-          <div>
-            <p class="eyebrow">Spotify</p>
-            <h3>Matúš Jarkovský</h3>
-            <p>Vlastné nahrávky a autorská hudba na jednom mieste.</p>
-          </div>
-          <a class="button button-primary" href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Otvoriť Spotify</a>
-        </div>
-        <div class="audio-placeholder reveal">
-          <p class="eyebrow">Vlastný prehrávač</p>
-          <h3>Priestor pre nové nahrávky</h3>
-          <p>Táto časť je pripravená na doplnenie vlastných MP3 nahrávok, coverov a popisov skladieb. Po dodaní súborov ich pridáme bez potreby WordPressu alebo Wixu.</p>
-        </div>
+      <div class="section-kicker reveal">Médiá</div>
+      <h2 class="section-title reveal">YOUTUBE</h2>
+      <div class="video-grid">
+        <button class="video-card reveal" data-video="1T6KAG1LOIo"><img src="https://i.ytimg.com/vi/1T6KAG1LOIo/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="MS1TT4BamVg"><img src="https://i.ytimg.com/vi/MS1TT4BamVg/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="12G6Gq9sc3U"><img src="https://i.ytimg.com/vi/12G6Gq9sc3U/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="bP6pHwFaRtQ"><img src="https://i.ytimg.com/vi/bP6pHwFaRtQ/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="Cb1zjsl5aho"><img src="https://i.ytimg.com/vi/Cb1zjsl5aho/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="pVKDB5RMDEE"><img src="https://i.ytimg.com/vi/pVKDB5RMDEE/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="QC-ihFMroi8"><img src="https://i.ytimg.com/vi/QC-ihFMroi8/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="O4vHG6pGDY4"><img src="https://i.ytimg.com/vi/O4vHG6pGDY4/hqdefault.jpg" alt="Video"><span>▶</span></button>
+        <button class="video-card reveal" data-video="BG2ZRHWxPU0"><img src="https://i.ytimg.com/vi/BG2ZRHWxPU0/hqdefault.jpg" alt="Video"><span>▶</span></button>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section class="section audio" id="audio">
+      <div class="section-kicker reveal">Audio</div>
+      <div class="audio-panel reveal">
+        <div><h2>Vlastné nahrávky</h2><p>Audio prehrávač doplníme po nahratí tvojich skladieb.</p></div>
+        <a class="outline-button" href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Spotify</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <div class="contact-inner reveal">
-        <p class="eyebrow">Napíš mi</p>
-        <h2>Kontakt</h2>
+        <div class="section-kicker">Kontakt</div>
         <a class="contact-mail" href="mailto:matus.jarkovsky@gmail.com">matus.jarkovsky@gmail.com</a>
         <div class="social-links">
-          <a href="https://www.instagram.com/matus.jarkovsky/" target="_blank" rel="noopener">Instagram ↗</a>
-          <a href="https://www.facebook.com/matus.jarkovsky/" target="_blank" rel="noopener">Facebook ↗</a>
-          <a href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Spotify ↗</a>
+          <a href="https://www.instagram.com/matus.jarkovsky/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/matus.jarkovsky/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://open.spotify.com/artist/3PMZrWqXjv7SYbdGdPfvuJ" target="_blank" rel="noopener">Spotify</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Matúš Jarkovský</p>
-    <a href="#top">Späť hore ↑</a>
-  </footer>
-
-  <dialog class="video-modal" aria-label="YouTube prehrávač">
-    <button class="modal-close" aria-label="Zatvoriť video">×</button>
-    <div class="video-frame"></div>
-  </dialog>
-
+  <footer><span>© <span id="year"></span> Matúš Jarkovský</span></footer>
+  <dialog class="video-modal"><button class="modal-close" aria-label="Zavrieť">×</button><div class="video-frame"></div></dialog>
   <script src="script.js"></script>
 </body>
 </html>
