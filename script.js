@@ -1,0 +1,17 @@
+const header=document.querySelector('.site-header');
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.main-nav');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);toggle.textContent=open?'Zavrieť':'Menu'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Menu'}));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const tabs=document.querySelectorAll('.media-tab');
+tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false')});document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');tab.setAttribute('aria-selected','true');document.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.add('active')}));
+const modal=document.querySelector('.video-modal');
+const frame=document.querySelector('.video-frame');
+document.querySelectorAll('.video-card').forEach(card=>card.addEventListener('click',()=>{frame.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${card.dataset.video}?autoplay=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;modal.showModal()}));
+document.querySelector('.modal-close').addEventListener('click',()=>modal.close());
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+modal.addEventListener('close',()=>frame.innerHTML='');
+document.getElementById('year').textContent=new Date().getFullYear();
