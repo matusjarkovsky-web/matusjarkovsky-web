@@ -1,0 +1,59 @@
+name: Nahrat hero fotku Matusa
+
+# Stiahne pripravene obrazky do repa:
+#  - images/hero-matus.webp        (1920x1080, subjekt vpravo, tmava plocha vlavo)
+#  - images/hero-matus-square.webp (800x800, pre mobil)
+on:
+  push:
+    paths:
+      - '.github/workflows/upload-hero.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stiahni siroke hero
+        run: |
+          mkdir -p images
+          curl -fsSL --max-time 90 -A 'Mozilla/5.0' -o images/hero-matus.webp \
+            'https://cdn.omniultra.imagine.art/ceaed39a-684f-4da0-a1e9-ca9f91ee1c26/media/image/b72da5e6124e4e1bac178ae9418cac76/hero-matus-wide.webp'
+          test "$(head -c 4 images/hero-matus.webp)" = "RIFF"
+
+      - name: Stiahni stvorcovu hero
+        run: |
+          curl -fsSL --max-time 90 -A 'Mozilla/5.0' -o images/hero-matus-square.webp \
+            'https://cdn-chatly-docs.vyro.ai/chatly/ultra-agent/uploads/3c022885-cc32-4117-a5b3-f841a5422e48/0858d5b5-289d-47d4-b18a-f77965602e41.webp'
+          test "$(head -c 4 images/hero-matus-square.webp)" = "RIFF"
+
+      - name: Optimalizuj stvorcovu na 800x800
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check pillow
+          python3 - <<'PY'
+          from PIL import Image
+          im = Image.open('images/hero-matus-square.webp').convert('RGB')
+          print('zdroj:', im.size)
+          im.resize((800, 800), Image.LANCZOS).save(
+              'images/hero-matus-square.webp', quality=78, method=6)
+          for f in ('images/hero-matus.webp', 'images/hero-matus-square.webp'):
+              i = Image.open(f)
+              print(f, i.size, i.format)
+          PY
+          ls -l images/
+
+      - name: Commitni
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add images/hero-matus.webp images/hero-matus-square.webp
+          if git diff --cached --quiet; then
+            echo 'Bez zmeny.'
+          else
+            git commit -m 'Hero: fotka Matusa (siroka + stvorcova verzia)'
+            git push
+          fi
