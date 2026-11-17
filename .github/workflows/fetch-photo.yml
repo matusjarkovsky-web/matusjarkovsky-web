@@ -1,0 +1,53 @@
+name: Stiahnut fotku Matusa z elantribute.sk
+
+# Jednorazovo stiahne portret z webu Elan Tribute do repa,
+# aby karta "Elan Tribute" nezávisela od cudzej domény.
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-photo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zisti, ci uz fotka existuje
+        id: check
+        run: |
+          if [ -f images/matus-jarkovsky.webp ]; then
+            echo "exists=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Stiahni fotku
+        if: steps.check.outputs.exists == '0'
+        run: |
+          mkdir -p images
+          curl -fsSL --max-time 60 -A 'Mozilla/5.0' \
+            -o images/matus-jarkovsky.webp \
+            'https://elantribute.sk/media/cmt1o8k27000a0pmx7hoxxfqe'
+          file images/matus-jarkovsky.webp
+          ls -l images/
+
+      - name: Over, ze je to naozaj WebP
+        if: steps.check.outputs.exists == '0'
+        run: |
+          test "$(head -c 4 images/matus-jarkovsky.webp)" = "RIFF"
+          test "$(dd if=images/matus-jarkovsky.webp bs=1 skip=8 count=4 2>/dev/null)" = "WEBP"
+          echo "Subor je platny WebP."
+
+      - name: Commitni fotku
+        if: steps.check.outputs.exists == '0'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add images/matus-jarkovsky.webp
+          git commit -m 'Fotka Matusa pre kartu Elan Tribute (lokalna kopia)'
+          git push
